@@ -21,4 +21,14 @@ class TestSerialTree(unittest.TestCase):
 
         a.preorder()
 
-        print a.serialize()
+        s = a.serialize()
+
+        print s
+
+        t = st.deserialize(s)
+
+        t.preorder()
+
+        s2 = t.serialize()
+
+        self.assertEqual(s, s2)
